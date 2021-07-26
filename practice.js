@@ -1,14 +1,40 @@
-const thisArr = [7, 32, 32, 85, -0, 46, 21, 98652, 890, 47, 74];
+const thisArr = [7, 32, 32, 85, 0, 46, 21, 98652, 890, 47, 74];
 
-const bubbleSort = array => {
-	const arr = array.slice();
+const merge = (leftArr, rightArr) => {
+	const output = [];
+	let leftIndex = 0;
+	let rightIndex = 0;
 
-	for (let i = 0; i < arr.length - 1; i++) {
-		for (let j = 0; j < arr.length - 1 - i; j++) {
-			if (arr[j] > arr[j+1]) {
-				[arr[j], arr[j+1]] = [arr[j+1], arr[j]];
-			}
+	while (leftIndex < leftArr.length && rightIndex < rightArr.length) {
+		const leftEl = leftArr[leftIndex];
+		const rightEl = rightArr[rightIndex];
+
+		if (leftEl < rightEl) {
+			output.push(leftEl);
+			leftIndex++;
+		} else {
+			output.push(rightEl);
+			rightIndex++;
 		}
 	}
-	return arr;
+
+	return [
+		...output,
+		...leftArr.slice(leftIndex),
+		...rightArr.slice(rightIndex)
+	]
 }
+
+const mergeSort = arr => {
+	if (arr.length <= 1) {
+		return arr;
+	}
+
+	const middleIndex = Math.floor(arr.length / 2);
+	const leftArr = arr.slice(0, middleIndex);
+	const rightArr = arr.slice(middleIndex);
+
+	return merge(mergeSort(leftArr), mergeSort(rightArr));
+}
+
+console.log(mergeSort(thisArr));
