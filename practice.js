@@ -1,40 +1,49 @@
 const thisArr = [7, 32, 32, 85, 0, 46, 21, 98652, 890, 47, 74];
 
-const merge = (leftArr, rightArr) => {
-	const output = [];
-	let leftIndex = 0;
-	let rightIndex = 0;
+// const arr = [1,2,3,4,5];
+// const result = arr.splice(1,2,3);
 
-	while (leftIndex < leftArr.length && rightIndex < rightArr.length) {
-		const leftEl = leftArr[leftIndex];
-		const rightEl = rightArr[rightIndex];
+// console.log(result);
 
-		if (leftEl < rightEl) {
-			output.push(leftEl);
-			leftIndex++;
-		} else {
-			output.push(rightEl);
-			rightIndex++;
-		}
-	}
+// function loopArr(arr, direction, steps) {
+// 	const output = [];
+// 	if (direction === 'left') {
+// 		for (let i = steps; i < arr.length; i++) {
+// 			output.push(arr[i]);
+// 		}
+// 		output.push(...arr.slice(0, steps));
+// 	} else if (direction === 'right') {
+// 		for (let i = arr.length - steps; i < arr.length; i++) {
+// 			output.push(arr[i]);
+// 		}
+// 		output.push(...arr.slice(0, arr.length - steps));
+// 	} else {
+// 		return 'invalid input';
+// 	}
+// 	return output;
+// }
 
-	return [
-		...output,
-		...leftArr.slice(leftIndex),
-		...rightArr.slice(rightIndex)
-	]
-}
+// console.log(loopArr([1,5,87,45,8,8], 'right', 2));
 
-const mergeSort = arr => {
-	if (arr.length <= 1) {
-		return arr;
-	}
+// function spinWords(string) {
+// 	const wordsArr = string.split(' ');
+// 	console.log(wordsArr);
 
-	const middleIndex = Math.floor(arr.length / 2);
-	const leftArr = arr.slice(0, middleIndex);
-	const rightArr = arr.slice(middleIndex);
+// 	for (i = 0; i < wordsArr.length; i++) {
+// 		if (wordsArr[i].length >= 5) {
+// 			wordsArr[i] = wordsArr[i].split('').reverse().join('')
+// 		}
+// 	}
 
-	return merge(mergeSort(leftArr), mergeSort(rightArr));
-}
+// 	return wordsArr.join(' ')
+// }
 
-console.log(mergeSort(thisArr));
+// console.log(spinWords('sroirraw wollef yeH'));
+
+// 
+
+
+
+
+
+ 
