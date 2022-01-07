@@ -40,27 +40,4 @@ const thisArr = [7, 32, 32, 85, 0, 46, 21, 98652, 890, 47, 74];
 
 // console.log(spinWords('sroirraw wollef yeH'));
 
-// const arr1 = [1, 2, 3, 4, 1, 3, 6, 5];
-// const arr2 = [5, 4, 3, 4, 1, 4, 6, 2];
-
-// function updateTimes(signalOne, signalTwo) {
-// 	const maxEqual = [];
-// 	let twoCount = 0;
-
-// 	for (i = 0; i < signalOne.length; i++) {
-// 		if (
-// 			signalOne[i] === signalTwo[twoCount] &&
-// 			signalOne[i] > Math.max(maxEqual)
-// 		) {
-// 			maxEqual.push(signalOne[i]);
-// 			twoCount++;
-// 		} else {
-// 			twoCount++;
-// 		}
-// 		console.log(Math.max(...maxEqual));
-// 	}
-// 	return maxEqual.length;
-// }
-
-// console.log(updateTimes(arr1, arr2));
 
